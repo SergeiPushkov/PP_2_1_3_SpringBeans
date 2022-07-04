@@ -1,12 +1,15 @@
 package app.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Timer extends Animal {
+public class Timer {
 
+    @Autowired
+    private AnimalsCage animalsCage;
     private Long nanoTime = System.nanoTime();
 
     public Long getTime() {
